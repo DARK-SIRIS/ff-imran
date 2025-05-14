@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>🔥 FF UID Lookup</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UID Info</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1 class="title">🔍 Free Fire UID 🔥 Lookup Tool</h1>
+    <div class="container">
+        <h1>Get UID Info</h1>
+        <input type="text" id="uid" placeholder="Enter UID">
+        <button id="fetchBtn">Fetch Info</button>
 
-    <form id="lookup-form" class="lookup-form">
-      <input type="text" id="uid" placeholder="🎯 Enter Your Free Fire UID" required />
-      <button type="submit">🚀 Search</button>
-    </form>
+        <div id="result" class="card">
+            <!-- Result will be displayed here -->
+        </div>
+    </div>
 
-    <div id="result" class="result"></div>
-  </div>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
