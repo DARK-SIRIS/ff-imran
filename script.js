@@ -2,10 +2,16 @@ document.getElementById('fetchBtn').addEventListener('click', function() {
     const uid = document.getElementById('uid').value;
     if (uid) {
         fetch(`https://yourapi.com/get_user_data?uid=${uid}`) // Replace with your actual API
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
             .then(data => {
                 const resultDiv = document.getElementById('result');
                 resultDiv.style.display = 'block';
+                resultDiv.classList.remove('error');
                 resultDiv.innerHTML = `
                     <h2>📋 UID Info for: <span style="color:#FFD700;">${uid}</span></h2>
                     <p>👤 <b>Name:</b> ${data.name || '❌ Not Found'}</p>
@@ -18,6 +24,7 @@ document.getElementById('fetchBtn').addEventListener('click', function() {
                 `;
             })
             .catch(error => {
+                console.error('Error fetching data:', error); // Log the error for debugging
                 const resultDiv = document.getElementById('result');
                 resultDiv.style.display = 'block';
                 resultDiv.classList.add('error');
