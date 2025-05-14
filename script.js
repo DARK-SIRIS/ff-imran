@@ -7,7 +7,6 @@ document.getElementById('fetchBtn').addEventListener('click', function() {
                     const resultDiv = document.getElementById('result');
                     resultDiv.style.display = 'block';
                     resultDiv.classList.add('error');
-                    resultDiv.innerHTML = '❗ Unable to fetch data. Please check your UID.';
                     return;
                 }
                 return response.json();
