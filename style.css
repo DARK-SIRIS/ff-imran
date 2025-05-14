@@ -1,0 +1,87 @@
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    padding: 30px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+}
+
+.container {
+    background: #111;
+    padding: 40px;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 0 20px #00ffff33;
+    text-align: center;
+}
+
+.title {
+    font-size: 28px;
+    color: #00ffe7;
+    margin-bottom: 30px;
+    animation: slideDown 1s ease-out;
+}
+
+.lookup-form input {
+    width: 80%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+}
+
+.lookup-form button {
+    background: #00ffe7;
+    color: #000;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.lookup-form button:hover {
+    transform: scale(1.05);
+}
+
+.card {
+    background: #222;
+    border: 1px solid #00ffe7;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+    box-shadow: 0 0 15px #00ffe799;
+}
+
+.card p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.error {
+    color: #ff5e5e;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    0% { transform: translateY(-50px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
