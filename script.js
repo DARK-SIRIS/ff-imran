@@ -4,7 +4,11 @@ document.getElementById('fetchBtn').addEventListener('click', function() {
         fetch(`https://tele-tool.vercel.app/ff?id=${uid}`)
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Failed to fetch data, please check your UID.');
+                    const resultDiv = document.getElementById('result');
+                    resultDiv.style.display = 'block';
+                    resultDiv.classList.add('error');
+                    resultDiv.innerHTML = '❗ Unable to fetch data. Please check your UID.';
+                    return;
                 }
                 return response.json();
             })
