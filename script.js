@@ -1,11 +1,10 @@
 document.getElementById('fetchBtn').addEventListener('click', function() {
     const uid = document.getElementById('uid').value;
     if (uid) {
-        // Replace with your actual API endpoint
         fetch(`https://tele-tool.vercel.app/ff?id=${uid}`)
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    throw new Error('Failed to fetch data, please check your UID.');
                 }
                 return response.json();
             })
@@ -13,6 +12,7 @@ document.getElementById('fetchBtn').addEventListener('click', function() {
                 const resultDiv = document.getElementById('result');
                 resultDiv.style.display = 'block';
                 resultDiv.classList.remove('error');
+                // Check if the returned data structure matches the fields you're expecting
                 resultDiv.innerHTML = `
                     <h2>📋 UID Info for: <span style="color:#FFD700;">${uid}</span></h2>
                     <p>👤 <b>Name:</b> ${data.name || '❌ Not Found'}</p>
@@ -25,7 +25,7 @@ document.getElementById('fetchBtn').addEventListener('click', function() {
                 `;
             })
             .catch(error => {
-                console.error('Error fetching data:', error); // Log the error for debugging
+                console.error('Error fetching data:', error);
                 const resultDiv = document.getElementById('result');
                 resultDiv.style.display = 'block';
                 resultDiv.classList.add('error');
