@@ -1,7 +1,8 @@
 document.getElementById('fetchBtn').addEventListener('click', function() {
     const uid = document.getElementById('uid').value;
     if (uid) {
-        fetch(`https://tele-tool.vercel.app/ff?id=${uid}`) // Replace with your actual API
+        // Replace with your actual API endpoint
+        fetch(`https://tele-tool.vercel.app/ff?id=${uid}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
